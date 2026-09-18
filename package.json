@@ -29,5 +29,8 @@
   "optionalDependencies": {
     "@esbuild/linux-x64": "0.28.2",
     "@rollup/rollup-linux-x64-gnu": "4.9.5"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.22.0"
   }
 }
