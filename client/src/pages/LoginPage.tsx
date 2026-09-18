@@ -14,6 +14,7 @@ import {
   Shield,
   CheckCircle2,
 } from 'lucide-react';
+import { SEOHead } from '../components/seo/SEOHead';
 
 export const LoginPage: React.FC = () => {
   const navigate = useNavigate();
@@ -52,6 +53,11 @@ export const LoginPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col justify-center items-center p-4 sm:p-6 lg:p-8 relative overflow-hidden">
+      <SEOHead
+        title="Sign In — OmniEdu Student Management System & ERP"
+        description="Access your OmniEdu portal. Secure single sign-on for school and college administrators, faculty, students, and parents."
+        canonicalUrl="https://omniedu-drab.vercel.app/login"
+      />
       {/* Background Mesh Elements */}
       <div className="absolute top-1/4 -left-48 w-96 h-96 bg-indigo-600/20 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-1/4 -right-48 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl pointer-events-none" />

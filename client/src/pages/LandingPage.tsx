@@ -25,12 +25,43 @@ import {
   Moon,
   Laptop,
   Compass,
+  HelpCircle,
+  ChevronDown,
 } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
+import { SEOHead } from '../components/seo/SEOHead';
 
 export const LandingPage: React.FC = () => {
   const { theme, toggleTheme } = useTheme();
   const [activeRoleTab, setActiveRoleTab] = useState<'ORG' | 'INST' | 'HOD' | 'FACULTY' | 'STUDENT' | 'PARENT'>('ORG');
+  const [openFaq, setOpenFaq] = useState<number | null>(0);
+
+  const faqItems = [
+    {
+      q: 'What is OmniEdu Student Management System & ERP?',
+      a: 'OmniEdu is an enterprise cloud-native Student Management System (SMS) and Educational ERP platform. It unifies academic catalogs, multi-campus governance, automated hour-wise attendance tracking, Anna University & CBSE marks grading, and AI-driven early-warning risk radar under a single high-performance dashboard.',
+    },
+    {
+      q: 'How does OmniEdu handle multi-tenant educational trusts?',
+      a: 'OmniEdu uses AsyncLocalStorage context isolation to guarantee strict multi-tenant boundary security. A governing educational trust can oversee dozens of autonomous school and college campuses from an aggregated executive telemetry dashboard without any risk of cross-tenant data leakage.',
+    },
+    {
+      q: 'Does OmniEdu support both K-12 Schools and Engineering Colleges?',
+      a: 'Yes. OmniEdu natively supports dual-mode polymorphic academic workflows. School campuses can organize by Standard (Grade 1–12) and Sections with CBSE/ICSE terms, while Engineering and Arts Colleges can manage collegiate departments (CSE, ECE, MECH), semesters, credits, and Anna University R2021 regulations.',
+    },
+    {
+      q: 'How does the Early Warning Attendance Radar work?',
+      a: 'The attendance engine continuously evaluates student attendance against strict university regulatory cutoffs (e.g. 75% minimum requirement). It automatically triages students into Normal, Condonation-eligible (65–74.9%), or Detained (<65%) tiers and triggers proactive alerts to advisors, students, and parents.',
+    },
+    {
+      q: 'What role-based access control (RBAC) levels are provided?',
+      a: 'OmniEdu provides 8 pre-configured role levels: Platform Admin, Organization Trust Admin, Institution Admin (Principal/Dean), Head of Department (HOD), Faculty/Teacher, Class Advisor, Student, and Parent/Guardian—each with granular permission scoping.',
+    },
+    {
+      q: 'Can we test OmniEdu without creating an account?',
+      a: 'Yes! OmniEdu includes a zero-login Interactive Demo Sandbox accessible at /sandbox. It runs on a sandbox-aware in-memory store so you can evaluate all role dashboards, test attendance marking, and explore student 360 profiles risk-free.',
+    },
+  ];
 
   const rolesData = {
     ORG: {
@@ -109,6 +140,11 @@ export const LandingPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 selection:bg-indigo-500 selection:text-white transition-colors duration-300">
+      <SEOHead
+        title="OmniEdu — AI-Powered Multi-Tenant Student Management System & ERP"
+        description="OmniEdu is an enterprise educational ERP and student management system for schools and engineering colleges. Real-time attendance, Anna University grading, and multi-tenant security."
+        canonicalUrl="https://omniedu-drab.vercel.app/"
+      />
       {/* ── Background Aura ────────────────────────────────────────────── */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden -z-10">
         <div className="absolute top-[-10%] left-[20%] w-[600px] h-[600px] rounded-full bg-indigo-600/10 blur-[140px]" />
@@ -151,6 +187,9 @@ export const LandingPage: React.FC = () => {
             </a>
             <a href="#architecture" className="hover:text-indigo-400 transition-colors">
               Architecture
+            </a>
+            <a href="#faq" className="hover:text-indigo-400 transition-colors">
+              FAQ
             </a>
           </nav>
 
@@ -720,6 +759,50 @@ export const LandingPage: React.FC = () => {
         </div>
       </section>
 
+      {/* ── FAQ Section (SEO & Rich Snippets) ─────────────────────────── */}
+      <section id="faq" className="py-20 px-4 sm:px-8 max-w-5xl mx-auto">
+        <div className="text-center space-y-4 mb-12">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/25 text-indigo-400 text-xs font-bold uppercase tracking-wider">
+            <HelpCircle className="w-3.5 h-3.5" />
+            <span>Frequently Asked Questions</span>
+          </div>
+          <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tight">
+            Everything You Need to Know About OmniEdu
+          </h2>
+          <p className="text-sm text-slate-400 max-w-2xl mx-auto">
+            Find answers to common questions regarding multi-campus tenancy, academic regulations (Anna Univ & CBSE), automated attendance cutoffs, and security scoping.
+          </p>
+        </div>
+
+        <div className="space-y-4">
+          {faqItems.map((item, idx) => (
+            <div
+              key={idx}
+              className="rounded-2xl bg-slate-900/60 border border-slate-800/80 overflow-hidden transition-all duration-200 hover:border-indigo-500/40"
+            >
+              <button
+                type="button"
+                onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
+                className="w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-semibold text-sm sm:text-base text-white hover:text-indigo-300 transition-colors"
+                aria-expanded={openFaq === idx}
+              >
+                <span>{item.q}</span>
+                <ChevronDown
+                  className={`w-5 h-5 text-indigo-400 flex-shrink-0 transition-transform duration-200 ${
+                    openFaq === idx ? 'rotate-180' : ''
+                  }`}
+                />
+              </button>
+              {openFaq === idx && (
+                <div className="px-6 pb-5 pt-1 text-sm text-slate-300 leading-relaxed border-t border-slate-800/50">
+                  {item.a}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* ── Final Call to Action ───────────────────────────────────────── */}
       <section className="py-20 px-4 sm:px-8 max-w-7xl mx-auto">
         <div className="p-8 sm:p-14 rounded-3xl bg-gradient-to-r from-indigo-900/60 via-purple-950/60 to-slate-900 border border-indigo-500/30 text-center shadow-2xl relative overflow-hidden">
@@ -778,6 +861,7 @@ export const LandingPage: React.FC = () => {
             <ul className="space-y-2">
               <li><a href="#features" className="hover:text-slate-200 transition-colors">Core Modules</a></li>
               <li><a href="#how-it-works" className="hover:text-slate-200 transition-colors">How It Works</a></li>
+              <li><a href="#faq" className="hover:text-slate-200 transition-colors">FAQ</a></li>
               <li><Link to="/sandbox" className="hover:text-slate-200 transition-colors">1-Click Sandbox</Link></li>
               <li><Link to="/onboard" className="hover:text-slate-200 transition-colors">Onboarding Wizard</Link></li>
             </ul>

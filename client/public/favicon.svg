@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366f1" />
+      <stop offset="50%" stop-color="#8b5cf6" />
+      <stop offset="100%" stop-color="#06b6d4" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#4f46e5" flood-opacity="0.4" />
+    </filter>
+  </defs>
+
+  <!-- Background Rounded Shield -->
+  <rect width="512" height="512" rx="128" fill="#0b0f19" />
+  <rect x="16" y="16" width="480" height="480" rx="112" stroke="url(#grad)" stroke-width="8" stroke-opacity="0.3" />
+
+  <!-- Central Emblem: Graduation Cap + Neural Node -->
+  <g filter="url(#shadow)">
+    <!-- Cap Diamond -->
+    <path d="M256 120 L420 200 L256 280 L92 200 Z" fill="url(#grad)" />
+    <!-- Cap Base Arc -->
+    <path d="M152 230 V310 C152 365 360 365 360 310 V230" stroke="url(#grad)" stroke-width="20" stroke-linecap="round" fill="none" />
+    <!-- Tassel -->
+    <path d="M380 210 V340" stroke="#38bdf8" stroke-width="12" stroke-linecap="round" />
+    <circle cx="380" cy="355" r="14" fill="#38bdf8" />
+  </g>
+
+  <!-- Sparkle Accent -->
+  <path d="M256 380 L264 410 L294 418 L264 426 L256 456 L248 426 L218 418 L248 410 Z" fill="#22d3ee" opacity="0.9" />
+</svg>

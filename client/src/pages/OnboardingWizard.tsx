@@ -15,6 +15,7 @@ import {
   Building,
 } from 'lucide-react';
 import { OrgType } from '../types';
+import { SEOHead } from '../components/seo/SEOHead';
 
 export const OnboardingWizard: React.FC = () => {
   const navigate = useNavigate();
@@ -160,6 +161,11 @@ export const OnboardingWizard: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col justify-center items-center p-4 sm:p-6 lg:p-8 relative overflow-hidden">
+      <SEOHead
+        title="Register Institution & Trust — OmniEdu Multi-Tenant ERP"
+        description="Onboard your educational trust, engineering college, or K-12 school onto OmniEdu in minutes. Configure multi-campus tenancy and super admin access."
+        canonicalUrl="https://omniedu-drab.vercel.app/onboard"
+      />
       {/* Glow Backdrops */}
       <div className="absolute top-10 -left-40 w-80 h-80 bg-indigo-500/15 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-10 -right-40 w-80 h-80 bg-cyan-500/15 rounded-full blur-3xl pointer-events-none" />

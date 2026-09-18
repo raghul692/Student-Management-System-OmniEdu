@@ -1,0 +1,26 @@
+# Robots.txt for OmniEdu Unified Educational ERP
+# https://omniedu-drab.vercel.app
+
+User-agent: *
+Allow: /
+Allow: /login
+Allow: /sandbox
+Allow: /onboard
+
+# Disallow internal application and multi-tenant administrative portals
+Disallow: /api/
+Disallow: /org-admin/
+Disallow: /dashboard/
+Disallow: /settings/
+Disallow: /academic/
+Disallow: /students/
+Disallow: /attendance/
+Disallow: /marks/
+Disallow: /fees/
+Disallow: /reports/
+Disallow: /ai/
+Disallow: /notifications/
+
+# Host and Sitemap Declarations
+Host: https://omniedu-drab.vercel.app
+Sitemap: https://omniedu-drab.vercel.app/sitemap.xml

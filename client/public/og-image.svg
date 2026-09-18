@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050811" />
+      <stop offset="50%" stop-color="#0b1120" />
+      <stop offset="100%" stop-color="#020617" />
+    </linearGradient>
+    <linearGradient id="primaryGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366f1" />
+      <stop offset="50%" stop-color="#8b5cf6" />
+      <stop offset="100%" stop-color="#06b6d4" />
+    </linearGradient>
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="70%" stop-color="#e0e7ff" />
+      <stop offset="100%" stop-color="#38bdf8" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="80" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)" />
+
+  <!-- Ambient Glow Circles -->
+  <circle cx="200" cy="150" r="180" fill="#4f46e5" opacity="0.25" filter="url(#glow)" />
+  <circle cx="1000" cy="480" r="220" fill="#0891b2" opacity="0.2" filter="url(#glow)" />
+
+  <!-- Grid lines decoration -->
+  <g opacity="0.08" stroke="#ffffff" stroke-width="1">
+    <line x1="0" y1="126" x2="1200" y2="126" />
+    <line x1="0" y1="252" x2="1200" y2="252" />
+    <line x1="0" y1="378" x2="1200" y2="378" />
+    <line x1="0" y1="504" x2="1200" y2="504" />
+    <line x1="240" y1="0" x2="240" y2="630" />
+    <line x1="480" y1="0" x2="480" y2="630" />
+    <line x1="720" y1="0" x2="720" y2="630" />
+    <line x1="960" y1="0" x2="960" y2="630" />
+  </g>
+
+  <!-- Brand Logo & Badge -->
+  <g transform="translate(100, 100)">
+    <rect width="72" height="72" rx="20" fill="url(#primaryGrad)" />
+    <path d="M36 18 L60 30 L36 42 L12 30 Z" fill="#ffffff" />
+    <path d="M22 34 V46 C22 54 50 54 50 46 V34" stroke="#ffffff" stroke-width="3" fill="none" />
+    <path d="M54 32 V50" stroke="#38bdf8" stroke-width="2.5" />
+    <circle cx="54" cy="52" r="2.5" fill="#38bdf8" />
+    <text x="96" y="48" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-size="34" font-weight="800" letter-spacing="-1">OmniEdu</text>
+    <rect x="250" y="22" width="130" height="32" rx="16" fill="#1e1b4b" stroke="#6366f1" stroke-width="1.5" />
+    <text x="270" y="44" fill="#a5b4fc" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600">ENTERPRISE ERP</text>
+  </g>
+
+  <!-- Headline & Subheading -->
+  <g transform="translate(100, 260)">
+    <text x="0" y="0" fill="url(#textGrad)" font-family="system-ui, -apple-system, sans-serif" font-size="56" font-weight="800" letter-spacing="-1.5">
+      The Next-Gen Student
+    </text>
+    <text x="0" y="70" fill="url(#textGrad)" font-family="system-ui, -apple-system, sans-serif" font-size="56" font-weight="800" letter-spacing="-1.5">
+      Management &amp; ERP System
+    </text>
+    <text x="0" y="140" fill="#94a3b8" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="400" width="700">
+      Multi-tenant campus intelligence, real-time attendance, Anna Univ grading, and AI risk radar.
+    </text>
+  </g>
+
+  <!-- Badges / Features Footer -->
+  <g transform="translate(100, 500)">
+    <g transform="translate(0, 0)">
+      <rect width="210" height="48" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1" />
+      <text x="20" y="30" fill="#38bdf8" font-family="system-ui, sans-serif" font-size="16" font-weight="600">✓ Multi-Campus Trusts</text>
+    </g>
+    <g transform="translate(230, 0)">
+      <rect width="200" height="48" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1" />
+      <text x="20" y="30" fill="#a855f7" font-family="system-ui, sans-serif" font-size="16" font-weight="600">✓ AI Defaulter Radar</text>
+    </g>
+    <g transform="translate(450, 0)">
+      <rect width="220" height="48" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1" />
+      <text x="20" y="30" fill="#22c55e" font-family="system-ui, sans-serif" font-size="16" font-weight="600">✓ 99.9% Uptime SLA</text>
+    </g>
+  </g>
+</svg>
