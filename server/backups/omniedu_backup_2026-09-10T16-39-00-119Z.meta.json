@@ -1,0 +1,17 @@
+{
+  "backupFile": "omniedu_backup_2026-09-10T16-39-00-119Z.json",
+  "sizeBytes": 3267832,
+  "sha256": "ae62612eb724f723e387be648af54fa5c1609203e9562b6cb20e7bf3f39e6b25",
+  "generatedAt": "2026-09-10T16:39:00.398Z",
+  "recordCounts": {
+    "organizations": 23,
+    "institutions": 24,
+    "users": 33,
+    "students": 55,
+    "attendances": 5725,
+    "exams": 3,
+    "marks": 365,
+    "feePayments": 3,
+    "admissions": 3
+  }
+}

@@ -1,0 +1,25 @@
+name: Render Free-Tier Keep-Alive Sleep Defense
+
+on:
+  schedule:
+    # Trigger every 14 minutes to prevent Render free instance sleep (15 min idle cutoff)
+    - cron: '*/14 * * * *'
+  workflow_dispatch: # Allow manual trigger from GitHub Actions tab
+
+jobs:
+  ping-health-probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping OmniEdu Live Health Endpoint
+        run: |
+          API_URL="${{ secrets.RENDER_API_URL || 'https://omniedu-api.onrender.com' }}"
+          echo "📡 Pinging $API_URL/api/health/live to maintain hot instance..."
+          HTTP_RESPONSE=$(curl -s -o /dev/null -w "%{http_code}" "$API_URL/api/health/live")
+          echo "HTTP Response Status: $HTTP_RESPONSE"
+          if [ "$HTTP_RESPONSE" -eq 200 ]; then
+            echo "✅ OmniEdu API is warm and healthy."
+          else
+            echo "⚠️ Health probe returned status: $HTTP_RESPONSE. Attempting secondary probe..."
+            sleep 2
+            curl -f -s "$API_URL/api/health/live" || exit 0
+          fi

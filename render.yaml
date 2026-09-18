@@ -1,0 +1,29 @@
+services:
+  # OmniEdu Core API (Node.js + Express + Prisma)
+  - type: web
+    name: omniedu-api
+    env: node
+    plan: free
+    region: oregon
+    buildCommand: npm install && npx prisma generate --schema=server/prisma/schema.prisma && npx prisma db push --schema=server/prisma/schema.prisma --accept-data-loss && npm run build --workspace=server
+    startCommand: node server/dist/server.js
+    healthCheckPath: /api/health/live
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 5000
+      - key: DATABASE_URL
+        sync: false # Set in Render dashboard (Supabase connection string port 5432 or 6543)
+      - key: DIRECT_URL
+        sync: false # Set in Render dashboard (Direct PostgreSQL connection)
+      - key: JWT_ACCESS_SECRET
+        generateValue: true
+      - key: JWT_REFRESH_SECRET
+        generateValue: true
+      - key: CORS_ORIGIN
+        value: https://omniedu.vercel.app,https://omniedu-client.vercel.app,http://localhost:5173
+      - key: STORAGE_DRIVER
+        value: local
+      - key: EMAIL_PROVIDER
+        value: logger

@@ -1,0 +1,33 @@
+{
+  "name": "omniedu-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "dev": "concurrently -n \"SERVER,CLIENT\" -c \"cyan,magenta\" \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:server": "wsl -d Ubuntu-24.04 -u root -- bash -c \"cd '/mnt/c/Users/raghu/Desktop/Student Management System Project/server' && DATABASE_URL='postgresql://resumate:resumate_secret@127.0.0.1:5432/omniedu_db?schema=public' PORT=5000 npx tsx watch src/server.ts\"",
+    "dev:client": "npm run dev --workspace=client",
+    "build": "npm run build --workspaces",
+    "test": "npm run test --workspaces",
+    "lint": "npm run lint --workspaces",
+    "typecheck": "npm run typecheck --workspaces",
+    "test:unit": "npm run test:unit --workspace=server",
+    "test:security": "npm run test:security --workspace=server",
+    "keepalive": "npm run keepalive --workspace=server",
+    "db:migrate": "npm run prisma:migrate --workspace=server",
+    "db:seed": "npm run prisma:seed --workspace=server",
+    "db:studio": "npm run prisma:studio --workspace=server",
+    "db:audit": "npm run audit --workspace=server"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "typescript": "^5.4.5"
+  },
+  "optionalDependencies": {
+    "@esbuild/linux-x64": "0.28.2",
+    "@rollup/rollup-linux-x64-gnu": "4.9.5"
+  }
+}
