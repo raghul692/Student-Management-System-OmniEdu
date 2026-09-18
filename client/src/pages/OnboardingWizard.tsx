@@ -164,7 +164,7 @@ export const OnboardingWizard: React.FC = () => {
       <SEOHead
         title="Register Institution & Trust — OmniEdu Multi-Tenant ERP"
         description="Onboard your educational trust, engineering college, or K-12 school onto OmniEdu in minutes. Configure multi-campus tenancy and super admin access."
-        canonicalUrl="https://omniedu-drab.vercel.app/onboard"
+        canonicalUrl="https://omniedu.is-a.dev/onboard"
       />
       {/* Glow Backdrops */}
       <div className="absolute top-10 -left-40 w-80 h-80 bg-indigo-500/15 rounded-full blur-3xl pointer-events-none" />

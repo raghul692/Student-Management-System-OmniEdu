@@ -143,7 +143,7 @@ export const LandingPage: React.FC = () => {
       <SEOHead
         title="OmniEdu — AI-Powered Multi-Tenant Student Management System & ERP"
         description="OmniEdu is an enterprise educational ERP and student management system for schools and engineering colleges. Real-time attendance, Anna University grading, and multi-tenant security."
-        canonicalUrl="https://omniedu-drab.vercel.app/"
+        canonicalUrl="https://omniedu.is-a.dev/"
       />
       {/* ── Background Aura ────────────────────────────────────────────── */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden -z-10">

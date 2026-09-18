@@ -1,5 +1,5 @@
 # Robots.txt for OmniEdu Unified Educational ERP
-# https://omniedu-drab.vercel.app
+# https://omniedu.is-a.dev
 
 User-agent: *
 Allow: /
@@ -22,5 +22,5 @@ Disallow: /ai/
 Disallow: /notifications/
 
 # Host and Sitemap Declarations
-Host: https://omniedu-drab.vercel.app
-Sitemap: https://omniedu-drab.vercel.app/sitemap.xml
+Host: https://omniedu.is-a.dev
+Sitemap: https://omniedu.is-a.dev/sitemap.xml

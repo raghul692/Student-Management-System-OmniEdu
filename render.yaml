@@ -22,7 +22,7 @@ services:
       - key: JWT_REFRESH_SECRET
         generateValue: true
       - key: CORS_ORIGIN
-        value: https://omniedu.vercel.app,https://omniedu-drab.vercel.app,https://student-management-system-omniedu.vercel.app,https://omniedu-client.vercel.app,http://localhost:5173
+        value: https://omniedu.is-a.dev,https://omniedu-drab.vercel.app,https://omniedu.vercel.app,http://localhost:5173
       - key: STORAGE_DRIVER
         value: local
       - key: EMAIL_PROVIDER

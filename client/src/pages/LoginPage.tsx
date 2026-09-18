@@ -56,7 +56,7 @@ export const LoginPage: React.FC = () => {
       <SEOHead
         title="Sign In — OmniEdu Student Management System & ERP"
         description="Access your OmniEdu portal. Secure single sign-on for school and college administrators, faculty, students, and parents."
-        canonicalUrl="https://omniedu-drab.vercel.app/login"
+        canonicalUrl="https://omniedu.is-a.dev/login"
       />
       {/* Background Mesh Elements */}
       <div className="absolute top-1/4 -left-48 w-96 h-96 bg-indigo-600/20 rounded-full blur-3xl pointer-events-none" />

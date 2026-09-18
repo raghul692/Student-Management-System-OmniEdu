@@ -14,7 +14,7 @@ const DEFAULT_DESCRIPTION =
   'OmniEdu is an enterprise multi-tenant Student Management System (SMS) & ERP for schools, colleges, and trusts. Real-time attendance, exams, fees & AI analytics.';
 const DEFAULT_KEYWORDS =
   'student management system, educational erp, school management software, college management system, attendance tracker, anna university marks grading, multi tenant erp, student 360 portal';
-const SITE_URL = 'https://omniedu-drab.vercel.app';
+const SITE_URL = 'https://omniedu.is-a.dev';
 
 export const SEOHead: React.FC<SEOHeadProps> = ({
   title = DEFAULT_TITLE,
